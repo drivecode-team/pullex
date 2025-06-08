@@ -7,7 +7,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:smart_pull_to_refresh_example/main.dart';
+import 'package:pullex_example/main.dart';
 
 
 void main() {
