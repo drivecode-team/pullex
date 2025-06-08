@@ -91,7 +91,7 @@ class _MaterialHeaderState
   @override
   void didUpdateWidget(covariant MaterialHeader oldWidget) {
     super.didUpdateWidget(oldWidget);
-    _position = Scrollable.of(context)!.position;
+    _position = Scrollable.of(context).position;
   }
 
   @override
