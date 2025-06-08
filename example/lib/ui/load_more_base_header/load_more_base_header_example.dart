@@ -23,7 +23,7 @@ class _LoadMoreBaseHeaderExampleState
 
     setState(() {
       items = List.generate(20, (index) => index);
-      noMoreData = false; // Скидаємо "немає більше даних" при refresh
+      noMoreData = false;
     });
     _controller.refreshCompleted();
   }
@@ -51,7 +51,7 @@ class _LoadMoreBaseHeaderExampleState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Load More Base Indicator Example')),
+      appBar: AppBar(title: const Text('Load More Base Header Example')),
       body: PullexRefresh(
         controller: _controller,
         enablePullDown: true,

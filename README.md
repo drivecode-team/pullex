@@ -41,33 +41,13 @@ import 'package:pullex/pullex.dart';
 
 ## 🖼️ Examples
 
-### Base Header
+| Base Header | Custom Header | Load More Base Header | Material Header |
+|-------------|---------------|----------------------|-----------------|
+| ![Base Header](assets/gif/base_header.gif) | ![Custom Header](assets/gif/custom_header.gif) | ![Load More Base Header](assets/gif/load_more_base_header.gif) | ![Material Header](assets/gif/material_header.gif) |
 
-![Base Header](assets/gif/base_header.gif)
-
-### Custom Header
-
-![Custom Header](assets/gif/custom_header.gif)
-
-### Load More Base Header
-
-![Load More Base Header](assets/gif/load_more_base_header.gif)
-
-### Material Header
-
-![Material Header](assets/gif/material_header.gif)
-
-### Stretch Circle Header
-
-![Stretch Header](assets/gif/stretch_header.gif)
-
-### Two Level Refresh
-
-![Two Level Refresh](assets/gif/two_level_refresh.gif)
-
-### Water Drop Header
-
-![Water Drop Header](assets/gif/water_drop_header.gif)
+| Stretch Circle Header | Two Level Refresh | Water Drop Header |  |
+|-----------------------|-------------------|-------------------|--|
+| ![Stretch Header](assets/gif/stretch_header.gif) | ![Two Level Refresh](assets/gif/two_level_refresh.gif) | ![Water Drop Header](assets/gif/water_drop_header.gif) |  |
 
 ---
 
