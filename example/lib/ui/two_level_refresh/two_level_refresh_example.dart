@@ -56,7 +56,7 @@ class _TwoLevelRefreshExampleState extends State<TwoLevelRefreshExample> {
                   onPressed: () {
                     _controller.twoLevelComplete();
                   },
-                  child: const Text('Назад до списку'),
+                  child: const Text('Back to list'),
                 ),
               ],
             ),
@@ -79,7 +79,7 @@ class _TwoLevelRefreshExampleState extends State<TwoLevelRefreshExample> {
         header: TwoLevelHeader(
           displayAlignment: TwoLevelDisplayAlignment.fromTop,
           height: 100,
-          canTwoLevelText: "Тягни ще більше для секретного рівня 🚀",
+          canTwoLevelText: "Pull even harder for a secret level 🚀",
           twoLevelWidget: _buildTwoLevelView(),
           decoration: BoxDecoration(
             color: Colors.blueAccent,
