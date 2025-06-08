@@ -2,6 +2,9 @@ name: pullex
 description: A customizable pull-to-refresh widget for Flutter, based on pull_to_refresh with enhancements and bugfixes.
 version: 1.0.0
 
+publish_to: https://pub.dev
+publisher: drivecode.com.ua
+
 homepage: https://github.com/drivecode-team/pullex
 repository: https://github.com/drivecode-team/pullex
 issue_tracker: https://github.com/drivecode-team/pullex/issues
