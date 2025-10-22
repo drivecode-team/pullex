@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.0.2 – 2025-10-23
+
+### Maintenance
+- Attempted to fix remaining pub.dev static analysis score issues (type annotations and minor refactors).
+- Added explicit parameter types and small cleanup in `BaseHeader` and `BaseFooter`.
+- Minor internal code consistency updates.
+
+---
+
 ## 1.0.1 – 2025-10-22
 
 ### Maintenance & Improvements
@@ -8,7 +17,6 @@
 - Updated deprecated Dart syntax (`typedef`, default parameter colons, `withOpacity`, and `tolerance`) for full Dart 3 compatibility.
 - Removed redundant imports and unused fields across internal files.
 - Fixed `example/analysis_options.yaml` include path issue.
-- Achieved **100% static analysis score** on pub.dev.
 - Minor documentation and formatting improvements.
 
 ---
