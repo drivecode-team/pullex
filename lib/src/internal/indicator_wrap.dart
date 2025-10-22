@@ -15,15 +15,17 @@ import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'dart:math' as math;
 import 'package:pullex/pullex.dart';
-import 'package:pullex/src/refresh/refresh_configuration.dart';
-import 'package:pullex/src/refresh/refresh_notifier.dart';
 import 'slivers.dart';
 
+/// A callback that returns a Future<void>.
 typedef VoidFutureCallBack = Future<void> Function();
 
-typedef void OffsetCallBack(double offset);
+/// A callback that receives a scroll offset.
+typedef OffsetCallBack = void Function(double offset);
 
-typedef void ModeChangeCallBack<T>(T? mode);
+/// A generic callback that reports mode changes.
+typedef ModeChangeCallBack<T> = void Function(T? mode);
+
 
 /// a widget  implements ios pull down refresh effect and Android material RefreshIndicator overScroll effect
 abstract class RefreshIndicator extends StatefulWidget {
@@ -41,10 +43,10 @@ abstract class RefreshIndicator extends StatefulWidget {
 
   const RefreshIndicator(
       {Key? key,
-      this.height: 60.0,
-      this.offset: 0.0,
-      this.completeDuration: const Duration(milliseconds: 500),
-      this.refreshStyle: RefreshStyle.Follow})
+      this.height = 60.0,
+      this.offset = 0.0,
+      this.completeDuration = const Duration(milliseconds: 500),
+      this.refreshStyle = RefreshStyle.Follow})
       : super(key: key);
 }
 
@@ -62,8 +64,8 @@ abstract class LoadIndicator extends StatefulWidget {
   const LoadIndicator(
       {Key? key,
       this.onClick,
-      this.loadStyle: LoadStyle.ShowAlways,
-      this.height: 60.0})
+      this.loadStyle = LoadStyle.ShowAlways,
+      this.height = 60.0})
       : super(key: key);
 }
 

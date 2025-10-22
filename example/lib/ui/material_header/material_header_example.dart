@@ -11,8 +11,8 @@ class MaterialHeaderExample extends StatefulWidget {
 }
 
 class _MaterialHeaderExampleState extends State<MaterialHeaderExample> {
-  final PullexRefreshController _refreshController =
-  PullexRefreshController(initialRefresh: false);
+  final RefreshController _refreshController =
+  RefreshController(initialRefresh: false);
 
   MaterialHeaderType _headerType = MaterialHeaderType.Classic;
 

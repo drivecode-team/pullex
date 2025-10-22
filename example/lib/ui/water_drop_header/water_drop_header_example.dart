@@ -9,8 +9,8 @@ class WaterDropHeaderExample extends StatefulWidget {
 }
 
 class _WaterDropHeaderExampleState extends State<WaterDropHeaderExample> {
-  final PullexRefreshController _refreshController =
-  PullexRefreshController(initialRefresh: false);
+  final RefreshController _refreshController =
+  RefreshController(initialRefresh: false);
 
   List<int> items = List.generate(20, (index) => index);
 

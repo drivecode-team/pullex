@@ -11,7 +11,7 @@ class LoadMoreBaseHeaderExample extends StatefulWidget {
 
 class _LoadMoreBaseHeaderExampleState
     extends State<LoadMoreBaseHeaderExample> {
-  final PullexRefreshController _controller = PullexRefreshController();
+  final RefreshController _controller = RefreshController();
 
   List<int> items = List.generate(20, (index) => index);
   bool noMoreData = false;

@@ -14,13 +14,12 @@ import 'package:flutter/material.dart'
     hide RefreshIndicatorState, RefreshIndicator;
 import 'package:pullex/src/internal/indicator_wrap.dart';
 import 'package:pullex/pullex.dart';
-import 'package:pullex/src/internal/pullex_localizations.dart';
 
 /// direction that icon should place to the text
 enum IconPosition { left, right, top, bottom }
 
 /// wrap child in outside,mostly use in add background color and padding
-typedef Widget OuterBuilder(Widget child);
+typedef OuterBuilder = Widget Function(Widget child);
 
 ///the most common indicator,combine with a text and a icon
 ///
@@ -62,11 +61,11 @@ class BaseHeader extends RefreshIndicator {
 
   const BaseHeader({
     Key? key,
-    RefreshStyle refreshStyle: RefreshStyle.Follow,
-    double height: 60.0,
-    Duration completeDuration: const Duration(milliseconds: 600),
+    RefreshStyle refreshStyle = RefreshStyle.Follow,
+    double height = 60.0,
+    Duration completeDuration = const Duration(milliseconds: 600),
     this.outerBuilder,
-    this.textStyle: const TextStyle(color: Colors.grey),
+    this.textStyle = const TextStyle(color: Colors.grey),
     this.releaseText,
     this.refreshingText,
     this.canTwoLevelIcon,
@@ -75,11 +74,11 @@ class BaseHeader extends RefreshIndicator {
     this.completeText,
     this.failedText,
     this.idleText,
-    this.iconPos: IconPosition.left,
-    this.spacing: 15.0,
+    this.iconPos = IconPosition.left,
+    this.spacing = 15.0,
     this.refreshingIcon,
-    this.failedIcon: const Icon(Icons.error, color: Colors.grey),
-    this.completeIcon: const Icon(Icons.done, color: Colors.grey),
+    this.failedIcon = const Icon(Icons.error, color: Colors.grey),
+    this.completeIcon = const Icon(Icons.done, color: Colors.grey),
     this.idleIcon = const Icon(Icons.arrow_downward, color: Colors.grey),
     this.releaseIcon = const Icon(Icons.refresh, color: Colors.grey),
   }) : super(
@@ -217,22 +216,22 @@ class BaseFooter extends LoadIndicator {
   const BaseFooter({
     Key? key,
     VoidCallback? onClick,
-    LoadStyle loadStyle: LoadStyle.ShowAlways,
-    double height: 60.0,
+    LoadStyle loadStyle = LoadStyle.ShowAlways,
+    double height = 60.0,
     this.outerBuilder,
-    this.textStyle: const TextStyle(color: Colors.grey),
+    this.textStyle = const TextStyle(color: Colors.grey),
     this.loadingText,
     this.noDataText,
     this.noMoreIcon,
     this.idleText,
     this.failedText,
     this.canLoadingText,
-    this.failedIcon: const Icon(Icons.error, color: Colors.grey),
-    this.iconPos: IconPosition.left,
-    this.spacing: 15.0,
-    this.completeDuration: const Duration(milliseconds: 300),
+    this.failedIcon = const Icon(Icons.error, color: Colors.grey),
+    this.iconPos = IconPosition.left,
+    this.spacing = 15.0,
+    this.completeDuration = const Duration(milliseconds: 300),
     this.loadingIcon,
-    this.canLoadingIcon: const Icon(Icons.autorenew, color: Colors.grey),
+    this.canLoadingIcon = const Icon(Icons.autorenew, color: Colors.grey),
     this.idleIcon = const Icon(Icons.arrow_upward, color: Colors.grey),
   }) : super(
           key: key,

@@ -10,8 +10,8 @@ class StretchHeaderExample extends StatefulWidget {
 }
 
 class _StretchHeaderExampleState extends State<StretchHeaderExample> {
-  final PullexRefreshController _refreshController =
-  PullexRefreshController(initialRefresh: false);
+  final RefreshController _refreshController =
+  RefreshController(initialRefresh: false);
 
   StretchDismissType _dismissType = StretchDismissType.RectSpread;
   StretchCircleType _circleType = StretchCircleType.Progress;

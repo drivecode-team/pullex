@@ -90,7 +90,7 @@ class PullexLocalizations {
   }
 
   static const RefreshLocalizationsDelegate delegate =
-      RefreshLocalizationsDelegate();
+  RefreshLocalizationsDelegate();
 
   static PullexLocalizations? of(BuildContext context) {
     return Localizations.of(context, PullexLocalizations);
@@ -212,16 +212,16 @@ class EnRefreshString implements RefreshString {
   String? canRefreshText = "Release to refresh";
 
   @override
-  String? canTwoLevelText = "Release to enter secondfloor";
+  String? canTwoLevelText = "Release to enter second floor";
 
   @override
-  String? idleLoadingText = "Pull up Load more";
+  String? idleLoadingText = "Pull up to load more";
 
   @override
-  String? idleRefreshText = "Pull down Refresh";
+  String? idleRefreshText = "Pull down to refresh";
 
   @override
-  String? loadFailedText = "Load Failed";
+  String? loadFailedText = "Load failed";
 
   @override
   String? loadingText = "Loading…";
@@ -284,19 +284,19 @@ class UkRefreshString implements RefreshString {
   String? canRefreshText = "Відпустіть, щоб оновити";
 
   @override
-  String? canTwoLevelText = "Відпустіть, щоб увійти на другий рівень";
+  String? canTwoLevelText = "Відпустіть, щоб перейти на другий рівень";
 
   @override
-  String? idleLoadingText = "Тягнути вгору, щоб завантажити більше";
+  String? idleLoadingText = "Потягніть вгору, щоб завантажити більше";
 
   @override
-  String? idleRefreshText = "Тягнути вниз, щоб оновити";
+  String? idleRefreshText = "Потягніть вниз, щоб оновити";
 
   @override
   String? loadFailedText = "Помилка завантаження";
 
   @override
-  String? loadingText = "Завантаження…";
+  String? loadingText = "Завантажується…";
 
   @override
   String? noMoreText = "Більше даних немає";
@@ -308,7 +308,7 @@ class UkRefreshString implements RefreshString {
   String? refreshFailedText = "Не вдалося оновити";
 
   @override
-  String? refreshingText = "Оновлення…";
+  String? refreshingText = "Оновлюється…";
 }
 
 /// Italian

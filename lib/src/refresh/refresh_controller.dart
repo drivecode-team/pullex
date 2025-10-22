@@ -20,7 +20,7 @@ import 'package:pullex/src/internal/indicator_wrap.dart';
 ///
 /// See also:
 /// * [PullexRefresh] — a widget to easily integrate pull-to-refresh and load-more functionality.
-class PullexRefreshController {
+class RefreshController {
   PullexRefreshState? _refresherState;
 
   RefreshNotifier<RefreshStatus>? headerMode;
@@ -42,7 +42,7 @@ class PullexRefreshController {
 
   final bool initialRefresh;
 
-  PullexRefreshController({
+  RefreshController({
     this.initialRefresh = false,
     RefreshStatus? initialRefreshStatus,
     LoadStatus? initialLoadStatus,

@@ -34,7 +34,7 @@ class RefreshPhysics extends ScrollPhysics {
   final SpringDescription? springDescription;
   final double? dragSpeedRatio;
   final bool? enableScrollWhenTwoLevel, enableScrollWhenRefreshCompleted;
-  final PullexRefreshController? controller;
+  final RefreshController? controller;
   final int? updateFlag;
 
   /// find out the viewport when bouncing,for compute the layoutExtent in header and footer
@@ -305,7 +305,7 @@ class RefreshPhysics extends ScrollPhysics {
         velocity: velocity * 0.91,
         leadingExtent: position.minScrollExtent,
         trailingExtent: 0.0,
-        tolerance: tolerance,
+        tolerance: toleranceFor(position),
       );
     }
 

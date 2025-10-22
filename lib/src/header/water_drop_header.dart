@@ -15,7 +15,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:pullex/src/internal/indicator_wrap.dart';
 import 'package:pullex/pullex.dart';
-import 'package:pullex/src/internal/pullex_localizations.dart';
 
 /// QQ iOS refresh header effect
 class WaterDropHeader extends RefreshIndicator {
