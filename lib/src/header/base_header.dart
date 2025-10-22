@@ -7,7 +7,6 @@
     This file is part of the pullex package.
  */
 
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart'
@@ -93,7 +92,6 @@ class BaseHeader extends RefreshIndicator {
 }
 
 class _BaseHeaderState extends RefreshIndicatorState<BaseHeader> {
-
   Widget _buildText(RefreshStatus? mode) {
     RefreshString strings =
         PullexLocalizations.of(context)?.currentLocalization ??
@@ -127,18 +125,18 @@ class _BaseHeaderState extends RefreshIndicatorState<BaseHeader> {
                     ? widget.failedIcon
                     : mode == RefreshStatus.canTwoLevel
                         ? widget.canTwoLevelIcon
-                            : mode == RefreshStatus.refreshing
-                                ? widget.refreshingIcon ??
-                                    SizedBox(
-                                      width: 25.0,
-                                      height: 25.0,
-                                      child: defaultTargetPlatform ==
-                                              TargetPlatform.iOS
-                                          ? const CupertinoActivityIndicator()
-                                          : const CircularProgressIndicator(
-                                              strokeWidth: 2.0),
-                                    )
-                                : widget.twoLevelView;
+                        : mode == RefreshStatus.refreshing
+                            ? widget.refreshingIcon ??
+                                SizedBox(
+                                  width: 25.0,
+                                  height: 25.0,
+                                  child: defaultTargetPlatform ==
+                                          TargetPlatform.iOS
+                                      ? const CupertinoActivityIndicator()
+                                      : const CircularProgressIndicator(
+                                          strokeWidth: 2.0),
+                                )
+                            : widget.twoLevelView;
     return icon ?? Container();
   }
 

@@ -86,7 +86,7 @@ class PullexLocalizations {
   }
 
   static const RefreshLocalizationsDelegate delegate =
-  RefreshLocalizationsDelegate();
+      RefreshLocalizationsDelegate();
 
   static PullexLocalizations? of(BuildContext context) {
     return Localizations.of(context, PullexLocalizations);
@@ -117,8 +117,7 @@ class RefreshLocalizationsDelegate
 
   @override
   Future<PullexLocalizations> load(Locale locale) {
-    return SynchronousFuture<PullexLocalizations>(
-        PullexLocalizations(locale));
+    return SynchronousFuture<PullexLocalizations>(PullexLocalizations(locale));
   }
 
   @override

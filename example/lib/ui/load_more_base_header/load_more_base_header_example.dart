@@ -9,8 +9,7 @@ class LoadMoreBaseHeaderExample extends StatefulWidget {
       _LoadMoreBaseHeaderExampleState();
 }
 
-class _LoadMoreBaseHeaderExampleState
-    extends State<LoadMoreBaseHeaderExample> {
+class _LoadMoreBaseHeaderExampleState extends State<LoadMoreBaseHeaderExample> {
   final RefreshController _controller = RefreshController();
 
   List<int> items = List.generate(20, (index) => index);
@@ -61,8 +60,7 @@ class _LoadMoreBaseHeaderExampleState
         onRefresh: _onRefresh,
         onLoading: _onLoading,
         child: ListView.builder(
-          itemBuilder: (context, index) =>
-              ListTile(title: Text('Item $index')),
+          itemBuilder: (context, index) => ListTile(title: Text('Item $index')),
           itemCount: items.length,
         ),
       ),

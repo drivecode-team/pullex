@@ -7,7 +7,6 @@
     This file is part of the pullex package.
  */
 
-
 // ignore_for_file: INVALID_USE_OF_PROTECTED_MEMBER
 // ignore_for_file: INVALID_USE_OF_VISIBLE_FOR_TESTING_MEMBER
 import 'package:flutter/rendering.dart';
@@ -25,7 +24,6 @@ typedef OffsetCallBack = void Function(double offset);
 
 /// A generic callback that reports mode changes.
 typedef ModeChangeCallBack<T> = void Function(T? mode);
-
 
 /// a widget  implements ios pull down refresh effect and Android material RefreshIndicator overScroll effect
 abstract class RefreshIndicator extends StatefulWidget {
@@ -521,7 +519,8 @@ abstract class LoadIndicatorState<T extends LoadIndicator> extends State<T>
       if (_checkIfCanLoading()) {
         if (activity is IdleScrollActivity) {
           if ((configuration!.enableBallisticLoad) ||
-              ((!configuration!.enableBallisticLoad) && mode == LoadStatus.canLoading)) {
+              ((!configuration!.enableBallisticLoad) &&
+                  mode == LoadStatus.canLoading)) {
             enterLoading();
           }
         }

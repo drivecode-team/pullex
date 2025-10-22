@@ -7,7 +7,6 @@
     This file is part of the pullex package.
  */
 
-
 import 'package:flutter/material.dart'
     hide RefreshIndicatorState, RefreshIndicator;
 import 'package:flutter/physics.dart';
@@ -178,23 +177,23 @@ class _StretchHeaderState extends RefreshIndicatorState<StretchHeader>
             ),
             !widget.enableChildOverflow
                 ? ClipRect(
-              child: Container(
-                height: (_stretchBounceCtl.isAnimating ||
-                    mode == RefreshStatus.refreshing
-                    ? 0
-                    : math.max(0, _stretchBounceCtl.value)) +
-                    widget.rectHeight,
-                child: widget.child,
-              ),
-            )
+                    child: Container(
+                      height: (_stretchBounceCtl.isAnimating ||
+                                  mode == RefreshStatus.refreshing
+                              ? 0
+                              : math.max(0, _stretchBounceCtl.value)) +
+                          widget.rectHeight,
+                      child: widget.child,
+                    ),
+                  )
                 : Container(
-              height: (_stretchBounceCtl.isAnimating ||
-                  mode == RefreshStatus.refreshing
-                  ? 0
-                  : math.max(0, _stretchBounceCtl.value)) +
-                  widget.rectHeight,
-              child: widget.child,
-            ),
+                    height: (_stretchBounceCtl.isAnimating ||
+                                mode == RefreshStatus.refreshing
+                            ? 0
+                            : math.max(0, _stretchBounceCtl.value)) +
+                        widget.rectHeight,
+                    child: widget.child,
+                  ),
           ],
         );
       },
@@ -394,50 +393,50 @@ class _StretchCircleHeaderState extends State<StretchCircleHeader>
         child: AlignTransition(
           child: widget.circleType == StretchCircleType.progress
               ? Container(
-            height: widget.circleRadius * 2 + 5,
-            child: Stack(
-              children: <Widget>[
-                Center(
-                  child: Container(
-                    height: widget.circleRadius * 2,
-                    decoration: BoxDecoration(
-                      color: widget.circleColor,
-                      shape: BoxShape.circle,
-                    ),
+                  height: widget.circleRadius * 2 + 5,
+                  child: Stack(
+                    children: <Widget>[
+                      Center(
+                        child: Container(
+                          height: widget.circleRadius * 2,
+                          decoration: BoxDecoration(
+                            color: widget.circleColor,
+                            shape: BoxShape.circle,
+                          ),
+                        ),
+                      ),
+                      Center(
+                        child: SizedBox(
+                          child: CircularProgressIndicator(
+                            valueColor: mode == RefreshStatus.refreshing
+                                ? AlwaysStoppedAnimation(widget.circleColor)
+                                : AlwaysStoppedAnimation(Colors.transparent),
+                            strokeWidth: 2,
+                          ),
+                          height: widget.circleRadius * 2 + 5,
+                          width: widget.circleRadius * 2 + 5,
+                        ),
+                      ),
+                    ],
                   ),
-                ),
-                Center(
-                  child: SizedBox(
-                    child: CircularProgressIndicator(
-                      valueColor: mode == RefreshStatus.refreshing
-                          ? AlwaysStoppedAnimation(widget.circleColor)
-                          : AlwaysStoppedAnimation(Colors.transparent),
-                      strokeWidth: 2,
-                    ),
-                    height: widget.circleRadius * 2 + 5,
-                    width: widget.circleRadius * 2 + 5,
-                  ),
-                ),
-              ],
-            ),
-          )
+                )
               : AnimatedBuilder(
-            builder: (_, __) {
-              return Container(
-                height: widget.circleRadius * 2,
-                child: CustomPaint(
-                  painter: _RaidalPainter(
-                    value: _radialCtrl.value,
-                    circleColor: widget.circleColor,
-                    circleRadius: widget.circleRadius,
-                    refreshing: mode == RefreshStatus.refreshing,
-                    rotationAngle: _rotationAngle,
-                  ),
+                  builder: (_, __) {
+                    return Container(
+                      height: widget.circleRadius * 2,
+                      child: CustomPaint(
+                        painter: _RaidalPainter(
+                          value: _radialCtrl.value,
+                          circleColor: widget.circleColor,
+                          circleRadius: widget.circleRadius,
+                          refreshing: mode == RefreshStatus.refreshing,
+                          rotationAngle: _rotationAngle,
+                        ),
+                      ),
+                    );
+                  },
+                  animation: _radialCtrl,
                 ),
-              );
-            },
-            animation: _radialCtrl,
-          ),
           alignment: _childMoveCtl.drive(_childMoveTween),
         ),
       ),

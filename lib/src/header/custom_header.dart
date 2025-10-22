@@ -14,7 +14,8 @@ import 'package:pullex/src/internal/indicator_wrap.dart';
 import 'package:pullex/pullex.dart';
 
 /// Custom header builder. You can use the second parameter to know what header state is.
-typedef HeaderBuilder = Widget Function(BuildContext context, RefreshStatus? mode);
+typedef HeaderBuilder = Widget Function(
+    BuildContext context, RefreshStatus? mode);
 
 /// Custom footer builder. You can use the second parameter to know what footer state is.
 typedef FooterBuilder = Widget Function(BuildContext context, LoadStatus? mode);
@@ -69,11 +70,11 @@ class CustomHeader extends RefreshIndicator {
     Duration completeDuration = const Duration(milliseconds: 600),
     RefreshStyle refreshStyle = RefreshStyle.follow,
   }) : super(
-    key: key,
-    completeDuration: completeDuration,
-    refreshStyle: refreshStyle,
-    height: height,
-  );
+          key: key,
+          completeDuration: completeDuration,
+          refreshStyle: refreshStyle,
+          height: height,
+        );
 
   @override
   State<StatefulWidget> createState() => _CustomHeaderState();

@@ -5,7 +5,7 @@ Forked from [flutter_pulltorefresh](https://github.com/xxzj990-game/flutter_pull
 
 ---
 
-## ✨ What's New in 1.0.3
+## ✨ What's New in 1.0.4
 
 - Improved localization and translations
 - Renamed **`PullexRefreshController` → `RefreshController`**
@@ -15,10 +15,8 @@ Forked from [flutter_pulltorefresh](https://github.com/xxzj990-game/flutter_pull
 
 ---
 
-## 🔁 Migration from `PullexRefreshController` → `RefreshController`
-
-> ⚠️ Starting from **v1.0.1**, the old class name **`PullexRefreshController`** has been renamed to **`RefreshController`**  
-> to make the API cleaner and more intuitive.
+### 🔁 Migration from `PullexRefreshController` → `RefreshController`
+⚠️ Starting from **v1.0.1**, the old class name **`PullexRefreshController`** has been renamed to **`RefreshController`**
 
 ### ❌ Before
 ```dart
@@ -57,7 +55,7 @@ Add to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  pullex: ^1.0.3
+  pullex: ^1.0.4
 ```
 
 ## 🧩 Basic Usage

@@ -5,13 +5,12 @@ class StretchHeaderExample extends StatefulWidget {
   const StretchHeaderExample({super.key});
 
   @override
-  State<StretchHeaderExample> createState() =>
-      _StretchHeaderExampleState();
+  State<StretchHeaderExample> createState() => _StretchHeaderExampleState();
 }
 
 class _StretchHeaderExampleState extends State<StretchHeaderExample> {
   final RefreshController _refreshController =
-  RefreshController(initialRefresh: false);
+      RefreshController(initialRefresh: false);
 
   StretchDismissType _dismissType = StretchDismissType.rectSpread;
   StretchCircleType _circleType = StretchCircleType.progress;
@@ -28,7 +27,6 @@ class _StretchHeaderExampleState extends State<StretchHeaderExample> {
     });
     _refreshController.refreshCompleted();
   }
-
 
   @override
   Widget build(BuildContext context) {

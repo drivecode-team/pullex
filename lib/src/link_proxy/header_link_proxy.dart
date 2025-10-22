@@ -45,11 +45,11 @@ class HeaderLinkProxy extends RefreshIndicator {
     RefreshStyle? refreshStyle,
     Duration completeDuration = const Duration(milliseconds: 200),
   }) : super(
-    height: height,
-    refreshStyle: refreshStyle,
-    completeDuration: completeDuration,
-    key: key,
-  );
+          height: height,
+          refreshStyle: refreshStyle,
+          completeDuration: completeDuration,
+          key: key,
+        );
 
   @override
   State<StatefulWidget> createState() => _HeaderLinkProxyState();
@@ -58,7 +58,8 @@ class HeaderLinkProxy extends RefreshIndicator {
 class _HeaderLinkProxyState extends RefreshIndicatorState<HeaderLinkProxy> {
   @override
   void resetValue() {
-    ((widget.linkKey as GlobalKey).currentState as RefreshProcessor).resetValue();
+    ((widget.linkKey as GlobalKey).currentState as RefreshProcessor)
+        .resetValue();
   }
 
   @override

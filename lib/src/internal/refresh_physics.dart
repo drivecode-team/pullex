@@ -7,7 +7,6 @@
     This file is part of the pullex package.
  */
 
-
 import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'dart:math' as math;
@@ -118,7 +117,6 @@ class RefreshPhysics extends ScrollPhysics {
     viewportRender ??=
         findViewport(controller!.position?.context.storageContext);
 
-
     if (controller!.headerMode!.value == RefreshStatus.twoLeveling) {
       if (offset > 0.0) {
         return parent!.applyPhysicsToUserOffset(position, offset);
@@ -176,12 +174,10 @@ class RefreshPhysics extends ScrollPhysics {
 
   @override
   double applyBoundaryConditions(ScrollMetrics position, double value) {
-
     final ScrollPosition scrollPosition = position as ScrollPosition;
 
     viewportRender ??=
         findViewport(controller!.position?.context.storageContext);
-
 
     bool notFull = position.minScrollExtent == position.maxScrollExtent;
     final bool enablePullDown = viewportRender == null
@@ -278,7 +274,8 @@ class RefreshPhysics extends ScrollPhysics {
   }
 
   @override
-  Simulation? createBallisticSimulation(ScrollMetrics position, double velocity) {
+  Simulation? createBallisticSimulation(
+      ScrollMetrics position, double velocity) {
     final controller = this.controller;
 
     viewportRender ??=
@@ -317,5 +314,4 @@ class RefreshPhysics extends ScrollPhysics {
 
     return super.createBallisticSimulation(position, velocity);
   }
-
 }
