@@ -5,23 +5,20 @@ Forked from [flutter_pulltorefresh](https://github.com/xxzj990-game/flutter_pull
 
 ---
 
-## ✨ What's New in 1.0.2
+## ✨ What's New in 1.0.3
 
-- Fixed and improved built-in localization strings.
-- Renamed **`PullexRefreshController` → `RefreshController`** for a cleaner API.
-- Updated deprecated Dart syntax (`typedef`, default parameters, `withOpacity`, and `tolerance`).
-- Removed redundant imports and unused fields.
-- Fixed analysis warnings in the example project.
-- Achieved **100% pub.dev static analysis score** ✅
-- Minor documentation and formatting improvements.
+- Improved localization and translations
+- Renamed **`PullexRefreshController` → `RefreshController`**
+- Fixed all static analysis warnings (`lints` compliant)
+- Achieved 100% pub.dev score
+- Minor documentation and code cleanup
 
 ---
 
 ## 🔁 Migration from `PullexRefreshController` → `RefreshController`
 
-In version **1.0.2**, the old class name **`PullexRefreshController`** was renamed to simply **`RefreshController`**  
-to make the API cleaner and more intuitive.
-
+> ⚠️ Starting from **v1.0.1**, the old class name **`PullexRefreshController`** has been renamed to **`RefreshController`**  
+> to make the API cleaner and more intuitive.
 
 ### ❌ Before
 ```dart
@@ -60,7 +57,7 @@ Add to your `pubspec.yaml`:
 
 ```yaml
 dependencies:
-  pullex: ^1.0.2
+  pullex: ^1.0.3
 ```
 
 ## 🧩 Basic Usage

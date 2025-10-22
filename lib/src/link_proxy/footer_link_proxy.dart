@@ -42,7 +42,7 @@ class FooterLinkProxy extends LoadIndicator {
     Key? key,
     required this.linkKey,
     double height = 0.0,
-    LoadStyle loadStyle = LoadStyle.ShowAlways,
+    LoadStyle loadStyle = LoadStyle.showAlways,
   }) : super(
     height: height,
     loadStyle: loadStyle,

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pullex/pullex.dart';
 
-enum MaterialHeaderType { Classic, WaterDrop }
+enum MaterialHeaderType { classic, waterDrop }
 
 class MaterialHeaderExample extends StatefulWidget {
   const MaterialHeaderExample({super.key});
@@ -12,9 +12,9 @@ class MaterialHeaderExample extends StatefulWidget {
 
 class _MaterialHeaderExampleState extends State<MaterialHeaderExample> {
   final RefreshController _refreshController =
-  RefreshController(initialRefresh: false);
+      RefreshController(initialRefresh: false);
 
-  MaterialHeaderType _headerType = MaterialHeaderType.Classic;
+  MaterialHeaderType _headerType = MaterialHeaderType.classic;
 
   List<int> items = List.generate(20, (index) => index);
 
@@ -29,15 +29,14 @@ class _MaterialHeaderExampleState extends State<MaterialHeaderExample> {
     _refreshController.refreshCompleted();
   }
 
-
   Widget _buildHeader() {
     switch (_headerType) {
-      case MaterialHeaderType.Classic:
+      case MaterialHeaderType.classic:
         return const MaterialHeader(
           color: Colors.blue,
           backgroundColor: Colors.white,
         );
-      case MaterialHeaderType.WaterDrop:
+      case MaterialHeaderType.waterDrop:
         return const WaterDropMaterialHeader(
           color: Colors.blue,
           backgroundColor: Colors.white,
@@ -61,7 +60,7 @@ class _MaterialHeaderExampleState extends State<MaterialHeaderExample> {
               child: ListView(
                 padding: const EdgeInsets.all(8),
                 children: [
-                  Text(
+                  const Text(
                     'Select Header Type',
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
@@ -76,9 +75,9 @@ class _MaterialHeaderExampleState extends State<MaterialHeaderExample> {
                         });
                       },
                     );
-                  }).toList(),
+                  }),
                   const Divider(),
-                  ...items.map((i) => ListTile(title: Text('Item $i'))).toList(),
+                  ...items.map((i) => ListTile(title: Text('Item $i'))),
                 ],
               ),
             ),

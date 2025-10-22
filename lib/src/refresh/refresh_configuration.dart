@@ -16,8 +16,6 @@ import 'package:pullex/src/refresh/pullex_refresh.dart';
 /// See also:
 /// * [PullexRefresh], a widget to easily attach pull-to-refresh and load-more functionality.
 class RefreshConfiguration extends InheritedWidget {
-  final Widget child;
-
   /// Global default header builder
   final IndicatorBuilder? headerBuilder;
 
@@ -87,9 +85,9 @@ class RefreshConfiguration extends InheritedWidget {
   /// Enables vibration when load-more is triggered
   final bool enableLoadMoreVibrate;
 
-  RefreshConfiguration({
+  const RefreshConfiguration({
     Key? key,
-    required this.child,
+    required Widget child,
     this.headerBuilder,
     this.footerBuilder,
     this.dragSpeedRatio = 1.0,
@@ -129,7 +127,7 @@ class RefreshConfiguration extends InheritedWidget {
   RefreshConfiguration.copyAncestor({
     Key? key,
     required BuildContext context,
-    required this.child,
+    required Widget child,
     IndicatorBuilder? headerBuilder,
     IndicatorBuilder? footerBuilder,
     double? dragSpeedRatio,
@@ -153,31 +151,56 @@ class RefreshConfiguration extends InheritedWidget {
     bool? enableRefreshVibrate,
     bool? enableLoadMoreVibrate,
     bool? hideFooterWhenNotFull,
-  })  : assert(RefreshConfiguration.of(context) != null,
-  "No ancestor RefreshConfiguration found. Please ensure that RefreshConfiguration is an ancestor of this widget."),
-        headerBuilder = headerBuilder ?? RefreshConfiguration.of(context)!.headerBuilder,
-        footerBuilder = footerBuilder ?? RefreshConfiguration.of(context)!.footerBuilder,
-        dragSpeedRatio = dragSpeedRatio ?? RefreshConfiguration.of(context)!.dragSpeedRatio,
-        twiceTriggerDistance = twiceTriggerDistance ?? RefreshConfiguration.of(context)!.twiceTriggerDistance,
-        headerTriggerDistance = headerTriggerDistance ?? RefreshConfiguration.of(context)!.headerTriggerDistance,
-        footerTriggerDistance = footerTriggerDistance ?? RefreshConfiguration.of(context)!.footerTriggerDistance,
-        springDescription = springDescription ?? RefreshConfiguration.of(context)!.springDescription,
-        hideFooterWhenNotFull = hideFooterWhenNotFull ?? RefreshConfiguration.of(context)!.hideFooterWhenNotFull,
-        maxOverScrollExtent = maxOverScrollExtent ?? RefreshConfiguration.of(context)!.maxOverScrollExtent,
-        maxUnderScrollExtent = maxUnderScrollExtent ?? RefreshConfiguration.of(context)!.maxUnderScrollExtent,
-        topHitBoundary = topHitBoundary ?? RefreshConfiguration.of(context)!.topHitBoundary,
-        bottomHitBoundary = bottomHitBoundary ?? RefreshConfiguration.of(context)!.bottomHitBoundary,
-        skipCanRefresh = skipCanRefresh ?? RefreshConfiguration.of(context)!.skipCanRefresh,
-        enableScrollWhenRefreshCompleted = enableScrollWhenRefreshCompleted ?? RefreshConfiguration.of(context)!.enableScrollWhenRefreshCompleted,
-        enableScrollWhenTwoLevel = enableScrollWhenTwoLevel ?? RefreshConfiguration.of(context)!.enableScrollWhenTwoLevel,
-        enableBallisticRefresh = enableBallisticRefresh ?? RefreshConfiguration.of(context)!.enableBallisticRefresh,
-        enableBallisticLoad = enableBallisticLoad ?? RefreshConfiguration.of(context)!.enableBallisticLoad,
-        enableLoadingWhenNoData = enableLoadingWhenNoData ?? RefreshConfiguration.of(context)!.enableLoadingWhenNoData,
-        enableLoadingWhenFailed = enableLoadingWhenFailed ?? RefreshConfiguration.of(context)!.enableLoadingWhenFailed,
-        closeTwoLevelDistance = closeTwoLevelDistance ?? RefreshConfiguration.of(context)!.closeTwoLevelDistance,
-        enableRefreshVibrate = enableRefreshVibrate ?? RefreshConfiguration.of(context)!.enableRefreshVibrate,
-        enableLoadMoreVibrate = enableLoadMoreVibrate ?? RefreshConfiguration.of(context)!.enableLoadMoreVibrate,
-        shouldFooterFollowWhenNotFull = shouldFooterFollowWhenNotFull ?? RefreshConfiguration.of(context)!.shouldFooterFollowWhenNotFull,
+  })  : assert(
+  RefreshConfiguration.of(context) != null,
+  "No ancestor RefreshConfiguration found. Please ensure that RefreshConfiguration is an ancestor of this widget.",
+  ),
+        headerBuilder =
+            headerBuilder ?? RefreshConfiguration.of(context)!.headerBuilder,
+        footerBuilder =
+            footerBuilder ?? RefreshConfiguration.of(context)!.footerBuilder,
+        dragSpeedRatio =
+            dragSpeedRatio ?? RefreshConfiguration.of(context)!.dragSpeedRatio,
+        twiceTriggerDistance = twiceTriggerDistance ??
+            RefreshConfiguration.of(context)!.twiceTriggerDistance,
+        headerTriggerDistance = headerTriggerDistance ??
+            RefreshConfiguration.of(context)!.headerTriggerDistance,
+        footerTriggerDistance = footerTriggerDistance ??
+            RefreshConfiguration.of(context)!.footerTriggerDistance,
+        springDescription = springDescription ??
+            RefreshConfiguration.of(context)!.springDescription,
+        hideFooterWhenNotFull = hideFooterWhenNotFull ??
+            RefreshConfiguration.of(context)!.hideFooterWhenNotFull,
+        maxOverScrollExtent = maxOverScrollExtent ??
+            RefreshConfiguration.of(context)!.maxOverScrollExtent,
+        maxUnderScrollExtent = maxUnderScrollExtent ??
+            RefreshConfiguration.of(context)!.maxUnderScrollExtent,
+        topHitBoundary = topHitBoundary ??
+            RefreshConfiguration.of(context)!.topHitBoundary,
+        bottomHitBoundary = bottomHitBoundary ??
+            RefreshConfiguration.of(context)!.bottomHitBoundary,
+        skipCanRefresh =
+            skipCanRefresh ?? RefreshConfiguration.of(context)!.skipCanRefresh,
+        enableScrollWhenRefreshCompleted = enableScrollWhenRefreshCompleted ??
+            RefreshConfiguration.of(context)!.enableScrollWhenRefreshCompleted,
+        enableScrollWhenTwoLevel = enableScrollWhenTwoLevel ??
+            RefreshConfiguration.of(context)!.enableScrollWhenTwoLevel,
+        enableBallisticRefresh = enableBallisticRefresh ??
+            RefreshConfiguration.of(context)!.enableBallisticRefresh,
+        enableBallisticLoad = enableBallisticLoad ??
+            RefreshConfiguration.of(context)!.enableBallisticLoad,
+        enableLoadingWhenNoData = enableLoadingWhenNoData ??
+            RefreshConfiguration.of(context)!.enableLoadingWhenNoData,
+        enableLoadingWhenFailed = enableLoadingWhenFailed ??
+            RefreshConfiguration.of(context)!.enableLoadingWhenFailed,
+        closeTwoLevelDistance = closeTwoLevelDistance ??
+            RefreshConfiguration.of(context)!.closeTwoLevelDistance,
+        enableRefreshVibrate = enableRefreshVibrate ??
+            RefreshConfiguration.of(context)!.enableRefreshVibrate,
+        enableLoadMoreVibrate = enableLoadMoreVibrate ??
+            RefreshConfiguration.of(context)!.enableLoadMoreVibrate,
+        shouldFooterFollowWhenNotFull = shouldFooterFollowWhenNotFull ??
+            RefreshConfiguration.of(context)!.shouldFooterFollowWhenNotFull,
         super(key: key, child: child);
 
   static RefreshConfiguration? of(BuildContext context) {
@@ -185,11 +208,12 @@ class RefreshConfiguration extends InheritedWidget {
   }
 
   @override
-  bool updateShouldNotify(RefreshConfiguration oldWidget) {
+  bool updateShouldNotify(covariant RefreshConfiguration oldWidget) {
     return skipCanRefresh != oldWidget.skipCanRefresh ||
         hideFooterWhenNotFull != oldWidget.hideFooterWhenNotFull ||
         dragSpeedRatio != oldWidget.dragSpeedRatio ||
-        enableScrollWhenRefreshCompleted != oldWidget.enableScrollWhenRefreshCompleted ||
+        enableScrollWhenRefreshCompleted !=
+            oldWidget.enableScrollWhenRefreshCompleted ||
         enableBallisticRefresh != oldWidget.enableBallisticRefresh ||
         enableScrollWhenTwoLevel != oldWidget.enableScrollWhenTwoLevel ||
         closeTwoLevelDistance != oldWidget.closeTwoLevelDistance ||
@@ -198,7 +222,6 @@ class RefreshConfiguration extends InheritedWidget {
         twiceTriggerDistance != oldWidget.twiceTriggerDistance ||
         maxUnderScrollExtent != oldWidget.maxUnderScrollExtent ||
         oldWidget.maxOverScrollExtent != maxOverScrollExtent ||
-        enableBallisticRefresh != oldWidget.enableBallisticRefresh ||
         enableLoadingWhenFailed != oldWidget.enableLoadingWhenFailed ||
         topHitBoundary != oldWidget.topHitBoundary ||
         enableRefreshVibrate != oldWidget.enableRefreshVibrate ||

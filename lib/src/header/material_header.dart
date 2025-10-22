@@ -35,7 +35,7 @@ class MaterialHeader extends RefreshIndicator {
     this.backgroundColor,
   }) : super(
     key: key,
-    refreshStyle: RefreshStyle.Front,
+    refreshStyle: RefreshStyle.front,
     offset: offset,
     height: height,
   );

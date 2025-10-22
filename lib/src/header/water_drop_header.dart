@@ -40,7 +40,7 @@ class WaterDropHeader extends RefreshIndicator {
           key: key,
           height: 60.0,
           completeDuration: completeDuration,
-          refreshStyle: RefreshStyle.UnFollow,
+          refreshStyle: RefreshStyle.unFollow,
         );
 
   @override

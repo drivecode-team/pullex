@@ -55,17 +55,17 @@ enum LoadStatus {
 
 /// Display style of the header indicator.
 enum RefreshStyle {
-  Follow,
-  UnFollow,
-  Behind,
-  Front
+  follow,
+  unFollow,
+  behind,
+  front
 }
 
 /// Display style of the footer indicator.
 enum LoadStyle {
-  ShowAlways,
-  HideAlways,
-  ShowWhenLoading
+  showAlways,
+  hideAlways,
+  showWhenLoading
 }
 
 /// Main component providing pull-to-refresh and load-more functionality.
@@ -336,7 +336,7 @@ class PullexRefreshState extends State<PullexRefresh> {
         dragStartBehavior: dragStartBehavior ?? DragStartBehavior.start,
         reverse: reverse ?? false,
       );
-    } else
+    } else {
       body = Scrollable(
         physics: _getScrollPhysics(
             conf, childView.physics ?? AlwaysScrollableScrollPhysics()),
@@ -365,6 +365,7 @@ class PullexRefreshState extends State<PullexRefresh> {
           return viewport;
         },
       );
+    }
 
     return body;
   }
@@ -444,12 +445,12 @@ class PullexRefreshState extends State<PullexRefresh> {
     final RefreshConfiguration? configuration =
         RefreshConfiguration.of(context);
     Widget? body;
-    if (widget.builder != null)
+    if (widget.builder != null) {
       body = widget.builder!(
           context,
           _getScrollPhysics(configuration, AlwaysScrollableScrollPhysics())
               as RefreshPhysics);
-    else {
+    } else {
       List<Widget>? slivers =
           _buildSliversByChild(context, widget.child, configuration);
       body = _buildBodyBySlivers(widget.child, slivers, configuration);

@@ -10,58 +10,54 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
-/// Implementation of localized strings for the [ClassicHeader],[ClassicFooter],[TwoLevelHeader]
+/// Implementation of localized strings for the [ClassicHeader], [ClassicFooter], [TwoLevelHeader].
 ///
-///
-/// Supported languages:now only add Chinese and English
-/// If you need to add other languages,please give me a pr
+/// Supported languages: English, Chinese, French, Ukrainian (you can add more via PR).
 ///
 /// ## Sample code
 ///
 /// To include the localizations provided by this class in a [MaterialApp],
-/// add [PullexLocalizations.delegates] to
-/// [MaterialApp.localizationsDelegates], and specify the locales your
-/// app supports with [MaterialApp.supportedLocales]:
+/// add `PullexLocalizations.delegates` to [MaterialApp.localizationsDelegates],
+/// and specify the locales your app supports with [MaterialApp.supportedLocales]:
 ///
 /// ```dart
-/// new MaterialApp(
-///   localizationsDelegates: RefreshLocalizations.delegates,
-///   supportedLocales: [
-///     const Locale('en'), // American English
-///     const Locale('zh'), // Israeli Hebrew
+/// MaterialApp(
+///   localizationsDelegates: PullexLocalizations.delegates,
+///   supportedLocales: const [
+///     Locale('en'), // English
+///     Locale('zh'), // Chinese
 ///     // ...
 ///   ],
-///   // ...
-/// )
+/// );
+/// ```
 ///
-/// If you don't have the language you need here and you want to add it, you can give me a pr.
+/// If you don't have the language you need here and you want to add it, please open a PR.
 ///
-/// Steps:
-/// 1. custom a class XXRefreshString implements  RefreshString ,and then translate them
-/// 2. add it into values
+/// **Steps:**
+/// 1. Create a class `XxRefreshString` that implements `RefreshString`, and translate the strings.
+/// 2. Add it into `values`.
+///
 /// ```dart
-///   Map<String, RefreshString> values = {
-///    'en': EnRefreshString(),
-///    'zh': ChRefreshString(),
-///    'fr': FrRefreshString(),
-///    'uk': UkRefreshString(),
-///    'xx':XXRefreshString(), // xx indicate your country code
-///  };
-/// 3. update delegate a method "isSupported"
+/// final Map<String, RefreshString> values = {
+///   'en': EnRefreshString(),
+///   'zh': ChRefreshString(),
+///   'fr': FrRefreshString(),
+///   'uk': UkRefreshString(),
+///   'xx': XxRefreshString(), // 'xx' indicates your language code
+/// };
+/// ```
+///
+/// 3. Update the delegate method `isSupported`.
+///
 /// ```dart
-///   @override
-//  bool isSupported(Locale locale) {
-//    return ['en', 'zh', 'fr', 'uk','xx'].contains(locale.languageCode);
-//  }
+/// @override
+/// bool isSupported(Locale locale) {
+///   return ['en', 'zh', 'fr', 'uk', 'xx'].contains(locale.languageCode);
+/// }
 /// ```
 ///
-/// see #175 to find more details
-///
-///
-/// ```
-///
-///
-/// ```
+/// See issue #175 for more details.
+
 class PullexLocalizations {
   final Locale locale;
 

@@ -61,7 +61,7 @@ class BaseHeader extends RefreshIndicator {
 
   const BaseHeader({
     Key? key,
-    RefreshStyle refreshStyle = RefreshStyle.Follow,
+    RefreshStyle refreshStyle = RefreshStyle.follow,
     double height = 60.0,
     Duration completeDuration = const Duration(milliseconds: 600),
     this.outerBuilder,
@@ -212,7 +212,7 @@ class BaseFooter extends LoadIndicator {
   const BaseFooter({
     Key? key,
     VoidCallback? onClick,
-    LoadStyle loadStyle = LoadStyle.ShowAlways,
+    LoadStyle loadStyle = LoadStyle.showAlways,
     double height = 60.0,
     this.outerBuilder,
     this.textStyle = const TextStyle(color: Colors.grey),

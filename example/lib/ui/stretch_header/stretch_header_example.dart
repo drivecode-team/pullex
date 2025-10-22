@@ -13,8 +13,8 @@ class _StretchHeaderExampleState extends State<StretchHeaderExample> {
   final RefreshController _refreshController =
   RefreshController(initialRefresh: false);
 
-  StretchDismissType _dismissType = StretchDismissType.RectSpread;
-  StretchCircleType _circleType = StretchCircleType.Progress;
+  StretchDismissType _dismissType = StretchDismissType.rectSpread;
+  StretchCircleType _circleType = StretchCircleType.progress;
 
   List<int> items = List.generate(20, (index) => index);
 
@@ -66,7 +66,7 @@ class _StretchHeaderExampleState extends State<StretchHeaderExample> {
                   });
                 },
               );
-            }).toList(),
+            }),
             Padding(
               padding: const EdgeInsets.all(8),
               child: Text(
@@ -85,13 +85,13 @@ class _StretchHeaderExampleState extends State<StretchHeaderExample> {
                   });
                 },
               );
-            }).toList(),
+            }),
             Divider(),
             ...items.map((index) {
               return ListTile(
                 title: Text('Item $index'),
               );
-            }).toList(),
+            }),
           ],
         ),
       ),
