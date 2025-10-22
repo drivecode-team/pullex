@@ -10,10 +10,9 @@ class TwoLevelRefreshExample extends StatefulWidget {
 }
 
 class _TwoLevelRefreshExampleState extends State<TwoLevelRefreshExample> {
-  final PullexRefreshController _controller = PullexRefreshController();
+  final RefreshController _controller = RefreshController();
 
   List<int> items = List.generate(20, (index) => index);
-  bool _isTwoLevelOpened = false;
 
   void _onRefresh() async {
     await Future.delayed(const Duration(milliseconds: 1000));
@@ -86,9 +85,7 @@ class _TwoLevelRefreshExampleState extends State<TwoLevelRefreshExample> {
           ),
         ),
         onTwoLevel: (isOpened) {
-          setState(() {
-            _isTwoLevelOpened = isOpened;
-          });
+          // You can perform actions when the second level is opened or closed
         },
         onRefresh: _onRefresh,
         onLoading: _onLoading,

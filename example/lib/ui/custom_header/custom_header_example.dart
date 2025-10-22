@@ -9,8 +9,8 @@ class CustomHeaderExample extends StatefulWidget {
 }
 
 class _CustomHeaderExampleState extends State<CustomHeaderExample> {
-  final PullexRefreshController _refreshController =
-      PullexRefreshController(initialRefresh: false);
+  final RefreshController _refreshController =
+      RefreshController(initialRefresh: false);
 
   List<int> items = List.generate(20, (index) => index);
 
@@ -73,7 +73,7 @@ class _CustomHeaderExampleState extends State<CustomHeaderExample> {
 
             return Container(
               height: 80.0,
-              color: Colors.blueAccent.withOpacity(0.2),
+              color: Colors.blueAccent.withValues(alpha: 0.2),
               child: Center(
                 child: Column(
                   mainAxisSize: MainAxisSize.min,

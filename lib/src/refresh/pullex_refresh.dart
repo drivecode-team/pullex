@@ -19,17 +19,17 @@ import 'package:pullex/src/internal/slivers.dart';
 // ignore_for_file: INVALID_USE_OF_VISIBLE_FOR_TESTING_MEMBER
 // ignore_for_file: DEPRECATED_MEMBER_USE
 
-/// Callback for two-level open/close state changes.
-typedef void OnTwoLevel(bool isOpen);
+/// Callback, fired when two-level refresh is opened or closed.
+typedef OnTwoLevel = void Function(bool isOpen);
 
 /// Determines whether footer should follow content based on load status.
-typedef bool ShouldFollowContent(LoadStatus? status);
+typedef ShouldFollowContent = bool Function(LoadStatus? status);
 
 /// Global default indicator builder.
 typedef IndicatorBuilder = Widget Function();
 
 /// Builder for attaching refresh behavior with custom scroll physics.
-typedef Widget RefresherBuilder(BuildContext context, RefreshPhysics physics);
+typedef RefresherBuilder = Widget Function(BuildContext context, RefreshPhysics physics);
 
 /// Status of the header indicator.
 enum RefreshStatus {
@@ -70,7 +70,7 @@ enum LoadStyle {
 
 /// Main component providing pull-to-refresh and load-more functionality.
 ///
-/// The [PullexRefreshController] manages header and footer state.
+/// The [RefreshController] manages header and footer state.
 /// Supports both pull-down refresh and pull-up load.
 ///
 /// Header examples: [BaseHeader], [WaterDropMaterialHeader], [MaterialHeader], [WaterDropHeader], [BezierCircleHeader].
@@ -79,7 +79,7 @@ enum LoadStyle {
 ///
 /// See also:
 /// * [RefreshConfiguration] — global configuration for PullexRefresh widgets.
-/// * [PullexRefreshController] — controller for managing header and footer state.
+/// * [RefreshController] — controller for managing header and footer state.
 class PullexRefresh extends StatefulWidget {
   /// Content widget. If child is a [ScrollView], internal slivers will be used.
   /// If not, content will be wrapped in [SliverToBoxAdapter].
@@ -110,7 +110,7 @@ class PullexRefresh extends StatefulWidget {
   final OnTwoLevel? onTwoLevel;
 
   /// Controller managing inner state.
-  final PullexRefreshController controller;
+  final RefreshController controller;
 
   /// Builder for advanced use cases requiring full control of slivers.
   final RefresherBuilder? builder;

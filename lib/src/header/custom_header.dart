@@ -14,10 +14,10 @@ import 'package:pullex/src/internal/indicator_wrap.dart';
 import 'package:pullex/pullex.dart';
 
 /// Custom header builder. You can use the second parameter to know what header state is.
-typedef Widget HeaderBuilder(BuildContext context, RefreshStatus? mode);
+typedef HeaderBuilder = Widget Function(BuildContext context, RefreshStatus? mode);
 
 /// Custom footer builder. You can use the second parameter to know what footer state is.
-typedef Widget FooterBuilder(BuildContext context, LoadStatus? mode);
+typedef FooterBuilder = Widget Function(BuildContext context, LoadStatus? mode);
 
 /// A custom Indicator for header.
 ///
