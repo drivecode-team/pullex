@@ -1,36 +1,33 @@
 # Changelog
 
+## 1.0.3 – 2025-10-23
+
+### Code Quality
+- Fixed all static analysis warnings to achieve full `lints` compliance.
+- Renamed enum constants to `lowerCamelCase` for Dart style consistency.
+- Added missing type annotations and `@override` keywords.
+- Minor cleanup and formatting improvements across the package.
+
 ## 1.0.2 – 2025-10-23
 
 ### Maintenance
-- Attempted to fix remaining pub.dev static analysis score issues (type annotations and minor refactors).
-- Added explicit parameter types and small cleanup in `BaseHeader` and `BaseFooter`.
-- Minor internal code consistency updates.
-
----
+- Addressed remaining static analysis score issues on pub.dev.
+- Added missing type annotations and minor refactors in `BaseHeader` and `BaseFooter`.
+- Improved internal code consistency.
 
 ## 1.0.1 – 2025-10-22
 
 ### Maintenance & Improvements
-- Fixed missing and incorrect translations in built-in localizations.
+- Fixed localization strings and missing translations.
 - Renamed **`PullexRefreshController` → `RefreshController`** for a cleaner API.
-- Updated deprecated Dart syntax (`typedef`, default parameter colons, `withOpacity`, and `tolerance`) for full Dart 3 compatibility.
-- Removed redundant imports and unused fields across internal files.
-- Fixed `example/analysis_options.yaml` include path issue.
-- Minor documentation and formatting improvements.
-
----
+- Updated deprecated Dart syntax and removed redundant imports.
+- Fixed example analysis configuration and improved documentation.
 
 ## 1.0.0 – 2025-06-08
 
-### Initial release of Pullex — a modern refresh & load controller for Flutter
-- Forked from `flutter_pulltorefresh`, completely reworked and published as **`pullex`**.
-- Compatible with **Flutter 3.22.x–3.32.x** and **Dart 3.x**.
-- Improved architecture, safer indicator states, and fixed scroll edge behavior.
-- Added new headers:  
-  `StretchHeader`, `WaterDropHeader`, `MaterialClassicHeader`, `CustomHeader`, `TwoLevelHeader`, `BaseHeader`.
+### Initial Release
+- Modern fork of `flutter_pulltorefresh`, reworked and published as **Pullex**.
+- Compatible with Flutter 3.22–3.32 and Dart 3.x.
+- Improved architecture, headers, and indicator behavior.
 - Full localization support (12 languages).
-- API cleanup, better defaults, and comprehensive inline documentation.
-- Includes a working example app, flexible indicators, and production-ready localization.
-
-Contributions welcome!
+- Clean API, better defaults, and example app included.

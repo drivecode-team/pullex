@@ -94,7 +94,7 @@ class TwoLevelHeader extends StatelessWidget {
       this.decoration,
       this.displayAlignment = TwoLevelDisplayAlignment.fromBottom,
       this.completeDuration = const Duration(milliseconds: 600),
-      this.textStyle = const TextStyle(color: const Color(0xff555555)),
+      this.textStyle = const TextStyle(color: Color(0xff555555)),
       this.releaseText,
       this.refreshingText,
       this.canTwoLevelIcon,
@@ -116,8 +116,8 @@ class TwoLevelHeader extends StatelessWidget {
     // TODO: implement build
     return BaseHeader(
       refreshStyle: displayAlignment == TwoLevelDisplayAlignment.fromBottom
-          ? RefreshStyle.Follow
-          : RefreshStyle.Behind,
+          ? RefreshStyle.follow
+          : RefreshStyle.behind,
       height: height,
       refreshingIcon: refreshingIcon,
       refreshingText: refreshingText,

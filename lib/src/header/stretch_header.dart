@@ -15,9 +15,9 @@ import 'package:pullex/pullex.dart';
 import 'package:pullex/src/internal/indicator_wrap.dart';
 import 'dart:math' as math;
 
-enum StretchDismissType { None, RectSpread, ScaleToCenter }
+enum StretchDismissType { none, rectSpread, scaleToCenter }
 
-enum StretchCircleType { Raidal, Progress }
+enum StretchCircleType { radial, progress }
 
 /// stretch container, if you need to implement indicator with stretch, you can consider using this.
 /// this will add the stretch container effect
@@ -44,10 +44,10 @@ class StretchHeader extends RefreshIndicator {
     this.enableChildOverflow = false,
     this.endRefresh,
     this.onResetValue,
-    this.dismissType = StretchDismissType.RectSpread,
+    this.dismissType = StretchDismissType.rectSpread,
     this.rectHeight = 70,
     this.stretchColor,
-  }) : super(refreshStyle: RefreshStyle.UnFollow, height: rectHeight);
+  }) : super(refreshStyle: RefreshStyle.unFollow, height: rectHeight);
 
   @override
   State<StatefulWidget> createState() => _StretchHeaderState();
@@ -212,13 +212,13 @@ class _StretchDismissPainter extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
     Path path = Path();
-    if (dismissType == StretchDismissType.None || value == 0) {
+    if (dismissType == StretchDismissType.none || value == 0) {
       path.moveTo(0, 0);
       path.lineTo(size.width, 0);
       path.lineTo(size.width, size.height);
       path.lineTo(0, size.height);
       path.lineTo(0, 0);
-    } else if (dismissType == StretchDismissType.RectSpread) {
+    } else if (dismissType == StretchDismissType.rectSpread) {
       Path path1 = Path();
       Path path2 = Path();
       double halfWidth = size.width / 2;
@@ -310,8 +310,8 @@ class StretchCircleHeader extends StatefulWidget {
     this.rectHeight = 70,
     this.circleColor = Colors.white,
     this.enableChildOverflow = false,
-    this.dismissType = StretchDismissType.RectSpread,
-    this.circleType = StretchCircleType.Progress,
+    this.dismissType = StretchDismissType.rectSpread,
+    this.circleType = StretchCircleType.progress,
     this.circleRadius = 12,
     this.radialRotationDuration = const Duration(milliseconds: 1500),
   });
@@ -392,7 +392,7 @@ class _StretchCircleHeaderState extends State<StretchCircleHeader>
       child: SlideTransition(
         position: _disMissTween.animate(_dismissCtrl),
         child: AlignTransition(
-          child: widget.circleType == StretchCircleType.Progress
+          child: widget.circleType == StretchCircleType.progress
               ? Container(
             height: widget.circleRadius * 2 + 5,
             child: Stack(

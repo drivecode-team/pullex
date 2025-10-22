@@ -67,7 +67,7 @@ class CustomHeader extends RefreshIndicator {
     this.onResetValue,
     double height = 60.0,
     Duration completeDuration = const Duration(milliseconds: 600),
-    RefreshStyle refreshStyle = RefreshStyle.Follow,
+    RefreshStyle refreshStyle = RefreshStyle.follow,
   }) : super(
     key: key,
     completeDuration: completeDuration,
@@ -132,7 +132,6 @@ class CustomFooter extends LoadIndicator {
   final VoidFutureCallBack? readyLoading;
   final VoidFutureCallBack? endLoading;
   final VoidCallback? onResetValue;
-  final VoidCallback? onClick;
 
   const CustomFooter({
     Key? key,
@@ -142,15 +141,15 @@ class CustomFooter extends LoadIndicator {
     this.readyLoading,
     this.endLoading,
     this.onResetValue,
-    this.onClick,
+    VoidCallback? onClick,
     double height = 60.0,
-    LoadStyle loadStyle = LoadStyle.ShowAlways,
+    LoadStyle loadStyle = LoadStyle.showAlways,
   }) : super(
-    key: key,
-    loadStyle: loadStyle,
-    height: height,
-    onClick: onClick,
-  );
+          key: key,
+          loadStyle: loadStyle,
+          height: height,
+          onClick: onClick,
+        );
 
   @override
   State<StatefulWidget> createState() => _CustomFooterState();

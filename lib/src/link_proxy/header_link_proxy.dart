@@ -58,8 +58,7 @@ class HeaderLinkProxy extends RefreshIndicator {
 class _HeaderLinkProxyState extends RefreshIndicatorState<HeaderLinkProxy> {
   @override
   void resetValue() {
-    (widget.linkKey as GlobalKey).currentState as RefreshProcessor
-      ..resetValue();
+    ((widget.linkKey as GlobalKey).currentState as RefreshProcessor).resetValue();
   }
 
   @override
