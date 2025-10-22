@@ -1,40 +1,92 @@
 # Pullex 🚀
 
-A modern, flexible and production-ready Pull-To-Refresh & Load-More widget for Flutter.  
-Forked from [flutter_pulltorefresh](https://github.com/xxzj990-game/flutter_pulltorefresh) and updated for latest Flutter versions with improved architecture and localization.
+A modern, flexible and production-ready **Pull-To-Refresh** & **Load-More** widget for Flutter.  
+Forked from [flutter_pulltorefresh](https://github.com/xxzj990-game/flutter_pulltorefresh) — rewritten and modernized for **Flutter 3 & Dart 3** with improved architecture, localization, and full null-safety.
 
 ---
 
-## ✨ Features
+## ✨ What's New in 1.0.1
 
-✅ Modern architecture — compatible with Flutter 3.x+  
-✅ Ready-to-use headers:
-- BaseHeader
-- CustomHeader
-- MaterialClassicHeader
-- WaterDropHeader
-- StretchCircleHeader
-- TwoLevelHeader
+- Fixed and improved built-in localization strings.
+- Renamed **`PullexRefreshController` → `RefreshController`** for a cleaner API.
+- Updated deprecated Dart syntax (`typedef`, default parameters, `withOpacity`, and `tolerance`).
+- Removed redundant imports and unused fields.
+- Fixed analysis warnings in the example project.
+- Achieved **100% pub.dev static analysis score** ✅
+- Minor documentation and formatting improvements.
 
-✅ Custom Footer support  
-✅ LinkHeader / LinkFooter proxy support  
-✅ Fully customizable  
-✅ Easy to integrate  
-✅ Localization with 14 languages built-in  
-✅ Production ready — used in live apps  
-✅ Zero dependencies (pure Dart)
+---
+
+## 🔁 Migration from `PullexRefreshController` → `RefreshController`
+
+In version **1.0.1**, the old class name **`PullexRefreshController`** was renamed to simply **`RefreshController`**  
+to make the API cleaner and more intuitive.
+
+
+### ❌ Before
+```dart
+final controller = PullexRefreshController();
+```
+### ✅ After
+```dart
+final controller = RefreshController();
+```
+> 💡 **Tip:** You only need to rename the class in your imports — no API behavior has changed.
+
+---
+
+## ⚙️ Features
+
+- ✅ Modern architecture — Flutter 3.x & Dart 3 compatible
+- ✅ Ready-to-use headers:
+    - `BaseHeader`
+    - `CustomHeader`
+    - `MaterialClassicHeader`
+    - `WaterDropHeader`
+    - `StretchCircleHeader`
+    - `TwoLevelHeader`
+- ✅ Custom Footer support
+- ✅ LinkHeader / LinkFooter proxy support
+- ✅ Fully customizable and easy to integrate
+- ✅ 12 built-in localizations
+- ✅ Zero dependencies (pure Dart)
+- ✅ Production-ready — used in live apps
 
 ---
 
 ## 📦 Installation
 
+Add to your `pubspec.yaml`:
+
 ```yaml
 dependencies:
-  pullex: ^1.0.0
+  pullex: ^1.0.1
 ```
 
+## 🧩 Basic Usage
 ```dart
 import 'package:pullex/pullex.dart';
+
+final controller = RefreshController();
+
+SmartRefresher(
+  controller: controller,
+  enablePullDown: true,
+  enablePullUp: true,
+  header: const MaterialClassicHeader(),
+  onRefresh: () async {
+    // your refresh logic
+    controller.refreshCompleted();
+  },
+  onLoading: () async {
+    // your load more logic
+    controller.loadComplete();
+  },
+  child: ListView.builder(
+  itemCount: 30,
+  itemBuilder: (_, i) => ListTile(title: Text('Item $i')),
+  ),
+);
 ```
 
 ---
@@ -53,7 +105,7 @@ import 'package:pullex/pullex.dart';
 
 ## 🌍 Localization
 
-Pullex supports 14 languages out of the box:
+Pullex supports 12 languages out of the box:
 
 | Language | Code |
 |----------|------|
@@ -101,13 +153,13 @@ MaterialApp(
 
 ## 🚚 Migration from `flutter_pulltorefresh`
 
-Pullex is a modern fork of `flutter_pulltorefresh`, fully compatible with Flutter 3.x+:
+Pullex is a **modernized fork** of `flutter_pulltorefresh`, fully compatible with Flutter 3:
 
-✅ Improved header/footer indicators  
-✅ Updated internal scroll physics  
-✅ API cleaned and simplified  
-✅ Built-in localization  
-✅ Actively maintained
+- Cleaner and safer public API
+- Updated internal scroll physics
+- Improved headers and footers
+- Built-in localization
+- Actively maintained
 
 ---
 
@@ -142,14 +194,17 @@ flutter run -d your_device
 ## ❤️ Contributing
 
 Contributions are welcome!  
-Feel free to open issues or submit pull requests.
+Feel free to open issues or submit PRs to improve **Pullex**.
 
 ---
 
 ## 📜 License
 
-MIT License — based on `flutter_pulltorefresh` by [Jpeng](https://github.com/xxzj990-game/flutter_pulltorefresh)
+MIT License — based on [flutter_pulltorefresh](https://github.com/xxzj990-game/flutter_pulltorefresh)  
+by **Jpeng**
 
 ---
 
-Pullex — Ready for modern Flutter 🚀
+**Pullex — built for modern Flutter 🚀**  
+Crafted with ❤️ by **Drivecode Team**
+
