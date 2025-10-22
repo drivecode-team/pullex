@@ -89,14 +89,12 @@ class BaseHeader extends RefreshIndicator {
         );
 
   @override
-  State createState() {
-    // TODO: implement createState
-    return _BaseHeaderState();
-  }
+  State<BaseHeader> createState() => _BaseHeaderState();
 }
 
 class _BaseHeaderState extends RefreshIndicatorState<BaseHeader> {
-  Widget _buildText(mode) {
+
+  Widget _buildText(RefreshStatus? mode) {
     RefreshString strings =
         PullexLocalizations.of(context)?.currentLocalization ??
             EnRefreshString();
@@ -118,7 +116,7 @@ class _BaseHeaderState extends RefreshIndicatorState<BaseHeader> {
         style: widget.textStyle);
   }
 
-  Widget _buildIcon(mode) {
+  Widget _buildIcon(RefreshStatus? mode) {
     Widget? icon = mode == RefreshStatus.canRefresh
         ? widget.releaseIcon
         : mode == RefreshStatus.idle
@@ -129,8 +127,6 @@ class _BaseHeaderState extends RefreshIndicatorState<BaseHeader> {
                     ? widget.failedIcon
                     : mode == RefreshStatus.canTwoLevel
                         ? widget.canTwoLevelIcon
-                        : mode == RefreshStatus.canTwoLevel
-                            ? widget.canTwoLevelIcon
                             : mode == RefreshStatus.refreshing
                                 ? widget.refreshingIcon ??
                                     SizedBox(
@@ -241,11 +237,7 @@ class BaseFooter extends LoadIndicator {
         );
 
   @override
-  State<StatefulWidget> createState() {
-    // TODO: implement createState
-
-    return _BaseFooterState();
-  }
+  State<BaseFooter> createState() => _BaseFooterState();
 }
 
 class _BaseFooterState extends LoadIndicatorState<BaseFooter> {
