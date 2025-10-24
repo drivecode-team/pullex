@@ -5,13 +5,12 @@ class BaseHeaderExample extends StatefulWidget {
   const BaseHeaderExample({super.key});
 
   @override
-  State<BaseHeaderExample> createState() =>
-      _BaseHeaderExampleState();
+  State<BaseHeaderExample> createState() => _BaseHeaderExampleState();
 }
 
 class _BaseHeaderExampleState extends State<BaseHeaderExample> {
   final RefreshController _refreshController =
-  RefreshController(initialRefresh: false);
+      RefreshController(initialRefresh: false);
 
   List<int> items = List.generate(20, (index) => index);
 

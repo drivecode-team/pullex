@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.4 – 2025-10-23
+
+### Maintenance
+- Applied `dart format` across the entire codebase for consistent styling.
+- Ensured compliance with pub.dev **formatting and style guidelines**.
+- Minor adjustments for cleaner code presentation.
+
 ## 1.0.3 – 2025-10-23
 
 ### Code Quality

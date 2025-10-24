@@ -44,10 +44,10 @@ class FooterLinkProxy extends LoadIndicator {
     double height = 0.0,
     LoadStyle loadStyle = LoadStyle.showAlways,
   }) : super(
-    height: height,
-    loadStyle: loadStyle,
-    key: key,
-  );
+          height: height,
+          loadStyle: loadStyle,
+          key: key,
+        );
 
   @override
   State<StatefulWidget> createState() => _FooterLinkProxyState();

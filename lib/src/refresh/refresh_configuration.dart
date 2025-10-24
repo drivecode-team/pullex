@@ -152,9 +152,9 @@ class RefreshConfiguration extends InheritedWidget {
     bool? enableLoadMoreVibrate,
     bool? hideFooterWhenNotFull,
   })  : assert(
-  RefreshConfiguration.of(context) != null,
-  "No ancestor RefreshConfiguration found. Please ensure that RefreshConfiguration is an ancestor of this widget.",
-  ),
+          RefreshConfiguration.of(context) != null,
+          "No ancestor RefreshConfiguration found. Please ensure that RefreshConfiguration is an ancestor of this widget.",
+        ),
         headerBuilder =
             headerBuilder ?? RefreshConfiguration.of(context)!.headerBuilder,
         footerBuilder =
@@ -175,8 +175,8 @@ class RefreshConfiguration extends InheritedWidget {
             RefreshConfiguration.of(context)!.maxOverScrollExtent,
         maxUnderScrollExtent = maxUnderScrollExtent ??
             RefreshConfiguration.of(context)!.maxUnderScrollExtent,
-        topHitBoundary = topHitBoundary ??
-            RefreshConfiguration.of(context)!.topHitBoundary,
+        topHitBoundary =
+            topHitBoundary ?? RefreshConfiguration.of(context)!.topHitBoundary,
         bottomHitBoundary = bottomHitBoundary ??
             RefreshConfiguration.of(context)!.bottomHitBoundary,
         skipCanRefresh =

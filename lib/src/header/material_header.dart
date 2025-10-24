@@ -34,18 +34,17 @@ class MaterialHeader extends RefreshIndicator {
     this.distance = 50.0,
     this.backgroundColor,
   }) : super(
-    key: key,
-    refreshStyle: RefreshStyle.front,
-    offset: offset,
-    height: height,
-  );
+          key: key,
+          refreshStyle: RefreshStyle.front,
+          offset: offset,
+          height: height,
+        );
 
   @override
   State<StatefulWidget> createState() => _MaterialHeaderState();
 }
 
-class _MaterialHeaderState
-    extends RefreshIndicatorState<MaterialHeader>
+class _MaterialHeaderState extends RefreshIndicatorState<MaterialHeader>
     with TickerProviderStateMixin {
   ScrollPosition? _position;
   Animation<Offset>? _positionFactor;
@@ -64,8 +63,9 @@ class _MaterialHeaderState
       upperBound: 1.0,
       duration: const Duration(milliseconds: 500),
     )..addListener(() {
-      if (mounted && _position != null && _position!.pixels <= 0) setState(() {});
-    });
+        if (mounted && _position != null && _position!.pixels <= 0)
+          setState(() {});
+      });
 
     _positionController = AnimationController(
       vsync: this,
@@ -191,15 +191,15 @@ class WaterDropMaterialHeader extends MaterialHeader {
     Color color = Colors.white,
     Color? backgroundColor,
   }) : super(
-    key: key,
-    height: _defaultHeaderHeight,
-    color: color,
-    distance: distance,
-    offset: offset,
-    backgroundColor: backgroundColor,
-    semanticsValue: semanticsValue,
-    semanticsLabel: semanticsLabel,
-  );
+          key: key,
+          height: _defaultHeaderHeight,
+          color: color,
+          distance: distance,
+          offset: offset,
+          backgroundColor: backgroundColor,
+          semanticsValue: semanticsValue,
+          semanticsLabel: semanticsLabel,
+        );
 
   @override
   State<StatefulWidget> createState() => _WaterDropMaterialHeaderState();
@@ -301,9 +301,8 @@ class _WaterDropMaterialHeaderState extends _MaterialHeaderState {
       _bezierController.value = offset / configuration!.headerTriggerDistance;
       _valueAni.value = _bezierController.value;
       _positionController.value = _bezierController.value * 0.3;
-      _scaleFactor.value = offset < 40.0
-          ? 0.0
-          : (_bezierController.value - 0.5) * 2 + 0.5;
+      _scaleFactor.value =
+          offset < 40.0 ? 0.0 : (_bezierController.value - 0.5) * 2 + 0.5;
     }
   }
 
@@ -326,10 +325,10 @@ class _WaterDropMaterialHeaderState extends _MaterialHeaderState {
           CustomPaint(
             painter: _showWater
                 ? _WaterPainter(
-              ratio: widget.distance / widget.height,
-              color: color,
-              listener: _positionFactor,
-            )
+                    ratio: widget.distance / widget.height,
+                    color: color,
+                    listener: _positionFactor,
+                  )
                 : null,
             child: _buildIndicator(color),
           ),

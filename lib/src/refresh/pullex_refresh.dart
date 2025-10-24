@@ -29,7 +29,8 @@ typedef ShouldFollowContent = bool Function(LoadStatus? status);
 typedef IndicatorBuilder = Widget Function();
 
 /// Builder for attaching refresh behavior with custom scroll physics.
-typedef RefresherBuilder = Widget Function(BuildContext context, RefreshPhysics physics);
+typedef RefresherBuilder = Widget Function(
+    BuildContext context, RefreshPhysics physics);
 
 /// Status of the header indicator.
 enum RefreshStatus {
@@ -45,28 +46,13 @@ enum RefreshStatus {
 }
 
 /// Status of the footer indicator.
-enum LoadStatus {
-  idle,
-  canLoading,
-  loading,
-  noMore,
-  failed
-}
+enum LoadStatus { idle, canLoading, loading, noMore, failed }
 
 /// Display style of the header indicator.
-enum RefreshStyle {
-  follow,
-  unFollow,
-  behind,
-  front
-}
+enum RefreshStyle { follow, unFollow, behind, front }
 
 /// Display style of the footer indicator.
-enum LoadStyle {
-  showAlways,
-  hideAlways,
-  showWhenLoading
-}
+enum LoadStyle { showAlways, hideAlways, showWhenLoading }
 
 /// Main component providing pull-to-refresh and load-more functionality.
 ///

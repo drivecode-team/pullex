@@ -10,7 +10,7 @@ class WaterDropHeaderExample extends StatefulWidget {
 
 class _WaterDropHeaderExampleState extends State<WaterDropHeaderExample> {
   final RefreshController _refreshController =
-  RefreshController(initialRefresh: false);
+      RefreshController(initialRefresh: false);
 
   List<int> items = List.generate(20, (index) => index);
 
@@ -35,7 +35,6 @@ class _WaterDropHeaderExampleState extends State<WaterDropHeaderExample> {
     });
     _refreshController.loadComplete();
   }
-
 
   @override
   Widget build(BuildContext context) {

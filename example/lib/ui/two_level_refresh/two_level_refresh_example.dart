@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pullex/pullex.dart';
 
-
 class TwoLevelRefreshExample extends StatefulWidget {
   const TwoLevelRefreshExample({super.key});
 
@@ -42,7 +41,8 @@ class _TwoLevelRefreshExampleState extends State<TwoLevelRefreshExample> {
       color: Colors.deepOrangeAccent,
       child: SafeArea(
         child: Center(
-          child: SingleChildScrollView( // <=== ось цей FIX
+          child: SingleChildScrollView(
+            // <=== ось цей FIX
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -64,7 +64,6 @@ class _TwoLevelRefreshExampleState extends State<TwoLevelRefreshExample> {
       ),
     );
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -90,8 +89,7 @@ class _TwoLevelRefreshExampleState extends State<TwoLevelRefreshExample> {
         onRefresh: _onRefresh,
         onLoading: _onLoading,
         child: ListView.builder(
-          itemBuilder: (context, index) =>
-              ListTile(title: Text('Item $index')),
+          itemBuilder: (context, index) => ListTile(title: Text('Item $index')),
           itemCount: items.length,
         ),
       ),

@@ -7,8 +7,6 @@
     This file is part of the pullex package.
  */
 
-
-
 import 'package:flutter/material.dart'
     hide RefreshIndicatorState, RefreshIndicator;
 import 'package:pullex/pullex.dart';

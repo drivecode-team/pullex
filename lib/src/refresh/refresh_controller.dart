@@ -35,8 +35,8 @@ class RefreshController {
 
   bool get isTwoLevel =>
       headerMode?.value == RefreshStatus.twoLeveling ||
-          headerMode?.value == RefreshStatus.twoLevelOpening ||
-          headerMode?.value == RefreshStatus.twoLevelClosing;
+      headerMode?.value == RefreshStatus.twoLevelOpening ||
+      headerMode?.value == RefreshStatus.twoLevelClosing;
 
   bool get isLoading => footerMode?.value == LoadStatus.loading;
 
@@ -53,8 +53,8 @@ class RefreshController {
 
   void bindState(PullexRefreshState state) {
     assert(
-    _refresherState == null,
-    "Don't use one PullexRefreshController with multiple PullexRefresh widgets. It may cause unexpected bugs, especially in TabBarView.",
+      _refresherState == null,
+      "Don't use one PullexRefreshController with multiple PullexRefresh widgets. It may cause unexpected bugs, especially in TabBarView.",
     );
     _refresherState = state;
   }
@@ -95,10 +95,12 @@ class RefreshController {
     Duration duration = const Duration(milliseconds: 500),
     Curve curve = Curves.linear,
   }) {
-    assert(position != null, 'requestRefresh() should be called after UI is rendered.');
+    assert(position != null,
+        'requestRefresh() should be called after UI is rendered.');
     if (isRefresh) return Future.value();
 
-    final indicatorElement = _findIndicator(position!.context.storageContext, RefreshIndicator);
+    final indicatorElement =
+        _findIndicator(position!.context.storageContext, RefreshIndicator);
     if (indicatorElement == null || _refresherState == null) return null;
 
     (indicatorElement.state as RefreshIndicatorState).floating = true;
@@ -110,7 +112,8 @@ class RefreshController {
     if (needMove) {
       return Future.delayed(const Duration(milliseconds: 50)).then((_) async {
         await position
-            ?.animateTo(position!.minScrollExtent - 0.0001, duration: duration, curve: curve)
+            ?.animateTo(position!.minScrollExtent - 0.0001,
+                duration: duration, curve: curve)
             .then((_) {
           if (_refresherState != null && _refresherState!.mounted) {
             _refresherState!.setCanDrag(true);
@@ -119,7 +122,8 @@ class RefreshController {
             } else {
               headerMode!.setValueWithNoNotify(RefreshStatus.refreshing);
               if (indicatorElement.state.mounted) {
-                (indicatorElement.state as RefreshIndicatorState).setState(() {});
+                (indicatorElement.state as RefreshIndicatorState)
+                    .setState(() {});
               }
             }
           }
@@ -136,10 +140,12 @@ class RefreshController {
     Duration duration = const Duration(milliseconds: 300),
     Curve curve = Curves.linear,
   }) {
-    assert(position != null, 'requestTwoLevel() should be called after UI is rendered.');
+    assert(position != null,
+        'requestTwoLevel() should be called after UI is rendered.');
     headerMode!.value = RefreshStatus.twoLevelOpening;
     return Future.delayed(const Duration(milliseconds: 50)).then((_) async {
-      await position?.animateTo(position!.minScrollExtent, duration: duration, curve: curve);
+      await position?.animateTo(position!.minScrollExtent,
+          duration: duration, curve: curve);
     });
   }
 
@@ -149,10 +155,12 @@ class RefreshController {
     Duration duration = const Duration(milliseconds: 300),
     Curve curve = Curves.linear,
   }) {
-    assert(position != null, 'requestLoading() should be called after UI is rendered.');
+    assert(position != null,
+        'requestLoading() should be called after UI is rendered.');
     if (isLoading) return Future.value();
 
-    final indicatorElement = _findIndicator(position!.context.storageContext, LoadIndicator);
+    final indicatorElement =
+        _findIndicator(position!.context.storageContext, LoadIndicator);
     if (indicatorElement == null || _refresherState == null) return null;
 
     (indicatorElement.state as LoadIndicatorState).floating = true;
@@ -163,7 +171,9 @@ class RefreshController {
 
     if (needMove) {
       return Future.delayed(const Duration(milliseconds: 50)).then((_) async {
-        await position?.animateTo(position!.maxScrollExtent, duration: duration, curve: curve)
+        await position
+            ?.animateTo(position!.maxScrollExtent,
+                duration: duration, curve: curve)
             .then((_) {
           if (_refresherState != null && _refresherState!.mounted) {
             _refresherState!.setCanDrag(true);
